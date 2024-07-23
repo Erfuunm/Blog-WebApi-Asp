@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "OZ7oZOAWOFIayqgqR9EEsw5a0/9cJp1UqhDjLTsyQFkAqy5ayacYtWDN8MiUqi1sk86tKzVr7SZ6dLvlMh4dBg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MOEIN\\source\\repos\\Blog-api\\BaseLibrary\\BaseLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MOEIN\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\MOEIN\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
