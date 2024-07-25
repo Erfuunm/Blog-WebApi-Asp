@@ -3,6 +3,7 @@ using ApiLibrary.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiLibrary.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240725060408_FixedRoles")]
+    partial class FixedRoles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,7 +43,7 @@ namespace ApiLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ApplicationUsers", (string)null);
+                    b.ToTable("ApplicationUsers");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.Branch", b =>
@@ -57,7 +60,7 @@ namespace ApiLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Branches", (string)null);
+                    b.ToTable("Branches");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.Department", b =>
@@ -74,7 +77,7 @@ namespace ApiLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments", (string)null);
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.GeneralDepartment", b =>
@@ -91,7 +94,7 @@ namespace ApiLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("GeneralDepartments", (string)null);
+                    b.ToTable("GeneralDepartments");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.NormalUser", b =>
@@ -149,7 +152,7 @@ namespace ApiLibrary.Data.Migrations
 
                     b.HasIndex("TownId");
 
-                    b.ToTable("NormalUsers", (string)null);
+                    b.ToTable("NormalUsers");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.RefreshTokenInfo", b =>
@@ -168,7 +171,7 @@ namespace ApiLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RefreshTokenInfos", (string)null);
+                    b.ToTable("RefreshTokenInfos");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.SystemRole", b =>
@@ -185,7 +188,7 @@ namespace ApiLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SystemRoles", (string)null);
+                    b.ToTable("SystemRoles");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.Town", b =>
@@ -202,7 +205,7 @@ namespace ApiLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Towns", (string)null);
+                    b.ToTable("Towns");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.UserRole", b =>
@@ -221,7 +224,7 @@ namespace ApiLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserRoles", (string)null);
+                    b.ToTable("UserRoles");
                 });
 
             modelBuilder.Entity("BaseLibrary.Entities.NormalUser", b =>

@@ -1,5 +1,8 @@
 using ApiLibrary.Data;
+using ApiLibrary.Repositories.Contracts;
+using ApiLibrary.Repositories.Implementations;
 using Microsoft.EntityFrameworkCore;
+using ServerLibrary.Helper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +21,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connection);
 });
 
-
+builder.Services.Configure<JwtSection>(builder.Configuration.GetSection("JwtSection"));
+builder.Services.AddScoped<IUserAccount, UserAccountRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
